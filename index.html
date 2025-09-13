@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Mejor Novia del Universo</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: #000;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    h1 {
+      margin-top: 20px;
+      font-size: 2.5em;
+      color: #ff4da6;
+      text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff4da6;
+    }
+    .slideshow {
+      position: relative;
+      max-width: 600px;
+      margin: 30px auto;
+      border: 10px solid #ff4da6;
+      border-radius: 30px;
+      box-shadow: 0 0 30px #ff4da6;
+      overflow: hidden;
+    }
+    .slides {
+      display: none;
+      width: 100%;
+      border-radius: 20px;
+    }
+    .fade {
+      animation: fade 3s infinite;
+    }
+    @keyframes fade {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+    .brillos {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .brillo {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: yellow;
+      border-radius: 50%;
+      box-shadow: 0 0 15px yellow;
+      animation: caer 5s linear infinite;
+    }
+    @keyframes caer {
+      0% { transform: translateY(-10px); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+    .youtube-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: red;
+      color: white;
+      font-size: 1.2em;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 0 15px red;
+      transition: transform 0.2s;
+    }
+    .youtube-btn:hover {
+      transform: scale(1.1);
+      background: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 La Mejor Novia del Universo M.F.T.Z "Mi princesa emosha 😍😍" 💖</h1>
+
+  <div class="slideshow">
+    <img class="slides fade" src="foto1.jpg" alt="Foto 1">
+    <img class="slides fade" src="foto2.jpg" alt="Foto 2">
+    <img class="slides fade" src="foto3.jpg" alt="Foto 3">
+  </div>
+
+  <a class="youtube-btn" href="https://www.youtube.com/watch?v=4q1N9a5B2VI" target="_blank">💛 Presiona para escuchar nuestra canción 💛</a>
+
+  <div class="brillos"></div>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+      let slides = document.getElementsByClassName("slides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 4000); // cambia cada 4s
+    }
+
+    // generar brillos
+    const brillosContainer = document.querySelector('.brillos');
+    for (let i = 0; i < 40; i++) {
+      const b = document.createElement('div');
+      b.className = 'brillo';
+      b.style.left = Math.random() * 100 + 'vw';
+      b.style.animationDuration = (3 + Math.random() * 5) + 's';
+      brillosContainer.appendChild(b);
+    }
+  </script>
+</body>
+</html>
