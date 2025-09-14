@@ -83,11 +83,10 @@
   </div>
 
   <!-- Audio -->
-  <audio controls autoplay loop>
-    <source src="flores.mp3" type="audio/mp3">
-    Tu navegador no soporta audio 🎵
-  </audio>
-
+<audio autoplay loop>
+  <source src="flores.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio 😢
+</audio>
   <!-- Brillitos -->
   <div class="sparkles"></div>
 
@@ -102,7 +101,7 @@
         slides[i].style.display = "none";
       }
       slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1; }
+      if (slideIndex >s.length) { slideIndex = 1; }
       slides[slideIndex - 1].style.display = "block";
       setTimeout(showSlides, 2500); // Cambia cada 2.5s
     }
