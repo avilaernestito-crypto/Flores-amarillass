@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>🌼 Flores Amarillas para Mi Princesa 🌼</title>
+  <title>🌻 Flores Amarillas para Mi Princesa 🌟</title>
   <style>
     body {
       margin: 0;
@@ -11,50 +11,38 @@
       background-color: #fff8dc;
       overflow-x: hidden;
     }
-
     h1 {
       color: #ffbf00;
       text-shadow: 2px 2px 5px #ffa500;
     }
-
     .slideshow {
       position: relative;
       max-width: 400px;
-      margin: auto;
+      margin: 20px auto;
       border: 10px solid pink;
       border-radius: 20px;
       box-shadow: 0 0 20px #ff69b4;
     }
-
     .slides {
       display: none;
       width: 100%;
       border-radius: 20px;
     }
-
     .fade {
       animation: fadeEffect 2s;
     }
-
     @keyframes fadeEffect {
       from {opacity: .4}
       to {opacity: 1}
     }
-
     .mensaje {
       margin: 20px;
       font-size: 1.3em;
       color: #ff69b4;
     }
-
-    .flores {
-      font-size: 2em;
-    }
-
     audio {
       margin-top: 20px;
     }
-
     /* Brillitos */
     .sparkles {
       position: fixed;
@@ -65,7 +53,6 @@
       pointer-events: none;
       z-index: 999;
     }
-
     .sparkle {
       position: absolute;
       width: 8px;
@@ -74,6 +61,183 @@
       border-radius: 50%;
       animation: sparkle 3s linear infinite;
     }
-
     @keyframes sparkle {
-      0% { transform
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(100vh) scale(0); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>💛 Flores Amarillas para Mi Princesa 💛</h1>
+
+  <!-- Slideshow -->
+  <div class="slideshow">
+    <img class="slides fade" src="IMG_20250712_213208_610.jpg">
+    <img class="slides fade" src="IMG_20250827_055029_924.jpg">
+    <img class="slides fade" src="IMG_20250901_140949_025.jpg">
+  </div>
+
+  <!-- Mensaje -->
+  <div class="mensaje">
+    🌻 Eres mi sol, mi razón y mi todo 💛✨
+  </div>
+
+  <!-- Audio -->
+  <audio controls autoplay loop>
+    <source src="flores.mp3" type="audio/mp3">
+    Tu navegador no soporta audio 🎵
+  </audio>
+
+  <!-- Brillitos -->
+  <div class="sparkles"></div>
+
+  <script>
+    // Slideshow automático
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 2500); // Cambia cada 2.5s
+    }
+
+    // Brillitos
+    function createSparkle() {
+      const sparkle = document.createElement("div");
+      sparkle.className = "sparkle";
+      sparkle.style.left = Math.random() * 100 + "vw";
+      sparkle.style.top = Math.random() * 100 + "vh";
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 3000);
+    }
+    setInterval(createSparkle, 200);
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🌻 Flores Amarillas para Mi Princesa 🌟</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      background-color: #fff8dc;
+      overflow-x: hidden;
+    }
+    h1 {
+      color: #ffbf00;
+      text-shadow: 2px 2px 5px #ffa500;
+    }
+    .slideshow {
+      position: relative;
+      max-width: 400px;
+      margin: 20px auto;
+      border: 10px solid pink;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #ff69b4;
+    }
+    .slides {
+      display: none;
+      width: 100%;
+      border-radius: 20px;
+    }
+    .fade {
+      animation: fadeEffect 2s;
+    }
+    @keyframes fadeEffect {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+    .mensaje {
+      margin: 20px;
+      font-size: 1.3em;
+      color: #ff69b4;
+    }
+    audio {
+      margin-top: 20px;
+    }
+    /* Brillitos */
+    .sparkles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+    }
+    .sparkle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: gold;
+      border-radius: 50%;
+      animation: sparkle 3s linear infinite;
+    }
+    @keyframes sparkle {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(100vh) scale(0); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>💛 Flores Amarillas para Mi Princesa 💛</h1>
+
+  <!-- Slideshow -->
+  <div class="slideshow">
+    <img class="slides fade" src="IMG_20250712_213208_610.jpg">
+    <img class="slides fade" src="IMG_20250827_055029_924.jpg">
+    <img class="slides fade" src="IMG_20250901_140949_025.jpg">
+  </div>
+
+  <!-- Mensaje -->
+  <div class="mensaje">
+    🌻 Eres mi sol, mi razón y mi todo 💛✨
+  </div>
+
+  <!-- Audio -->
+  <audio controls autoplay loop>
+    <source src="flores.mp3" type="audio/mp3">
+    Tu navegador no soporta audio 🎵
+  </audio>
+
+  <!-- Brillitos -->
+  <div class="sparkles"></div>
+
+  <script>
+    // Slideshow automático
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 2500); // Cambia cada 2.5s
+    }
+
+    // Brillitos
+    function createSparkle() {
+      const sparkle = document.createElement("div");
+      sparkle.className = "sparkle";
+      sparkle.style.left = Math.random() * 100 + "vw";
+      sparkle.style.top = Math.random() * 100 + "vh";
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 3000);
+    }
+    setInterval(createSparkle, 200);
+  </script>
+</body>
+</html>
