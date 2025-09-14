@@ -7,670 +7,73 @@
     body {
       margin: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: #fff8dc;
-      overflow: hidden;
       text-align: center;
+      background-color: #fff8dc;
+      overflow-x: hidden;
     }
+
     h1 {
-      color: #ffcc00;
-      text-shadow: 2px 2px #ff6600;
-      margin-top: 20px;
+      color: #ffbf00;
+      text-shadow: 2px 2px 5px #ffa500;
     }
+
     .slideshow {
       position: relative;
-      max-width: 90%;
+      max-width: 400px;
       margin: auto;
+      border: 10px solid pink;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #ff69b4;
     }
-    .fade {
+
+    .slides {
       display: none;
-      animation: fadeEffect 3s infinite;
-    }
-    @keyframes fadeEffect {
-      0% {opacity: 0;}
-      25% {opacity: 1;}
-      75% {opacity: 1;}
-      100% {opacity: 0;}
-    }
-    img {
       width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 0 20px gold;
+      border-radius: 20px;
     }
+
+    .fade {
+      animation: fadeEffect 2s;
+    }
+
+    @keyframes fadeEffect {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
     .mensaje {
+      margin: 20px;
+      font-size: 1.3em;
+      color: #ff69b4;
+    }
+
+    .flores {
+      font-size: 2em;
+    }
+
+    audio {
       margin-top: 20px;
-      font-size: 20px;
-      color: #ff6600;
     }
-    /* Marco corazón */
-    .corazon {
-      width: 200px;
-      height: 200px;
-      background: url("https://i.imgur.com/XxN5wfm.png") no-repeat center/contain;
-      margin: 20px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+
+    /* Brillitos */
+    .sparkles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
     }
-    .corazon img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid gold;
-    }
-    /* Brillitos animados */
+
     .sparkle {
       position: absolute;
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       background: gold;
       border-radius: 50%;
-      animation: sparkleMove 5s linear infinite;
+      animation: sparkle 3s linear infinite;
     }
-    @keyframes sparkleMove {
-      from { transform: translateY(-10px); opacity: 1;}
-      to { transform: translateY(100vh); opacity: 0;}
-    }
-    /* Audio */
-    audio {
-      margin-top: 25px;
-      width: 300px;
-    }
-  </style>
-</head>
-<body>
-  <h1>🌼 Flores Amarillas para Mi Princesa 🌼</h1>
 
-  <!-- Slideshow -->
-  <div class="slideshow">
-    <div class="fade"><img src="https://i.imgur.com/FqX0QoY.jpg" alt="Flor 1"></div>
-    <div class="fade"><img src="https://i.imgur.com/8rmBY8R.jpg" alt="Flor 2"></div>
-    <div class="fade"><img src="https://i.imgur.com/RcM8oJ5.jpg" alt="Flor 3"></div>
-  </div>
-
-  <!-- Marco de corazón con foto -->
-  <div class="corazon">
-    <img src="https://i.imgur.com/JRrVi0v.jpg" alt="Mi amor">
-  </div>
-
-  <!-- Mensaje -->
-  <div class="mensaje">💛 La mejor novia del universo M.F.T.Z — Mi princesa emosha 😍💛</div>
-
-  <!-- Música -->
-  <audio controls autoplay loop>
-    <source src="Floricienta_Flores_Amarillas.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio 😢
-  </audio>
-
-  <!-- Brillitos -->
-  <script>
-    let body = document.body;
-    setInterval(() => {
-      let sparkle = document.createElement('div');
-      sparkle.className = 'sparkle';
-      sparkle.style.left = Math.random() * window.innerWidth + 'px';
-      sparkle.style.top = '0px';
-      body.appendChild(sparkle);
-      setTimeout(() => sparkle.remove(), 5000);
-    }, 300);
-  </script>
-
-  <!-- Slideshow automático -->
-  <script>
-    let slideIndex = 0;
-    function showSlides() {
-      let slides = document.getElementsByClassName("fade");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
-      slides[slideIndex-1].style.display = "block";
-      setTimeout(showSlides, 3000); // Cambia cada 3 seg
-    }
-    showSlides();
-  </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>🌼 Flores Amarillas para Mi Princesa 🌼</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: #fff8dc;
-      overflow: hidden;
-      text-align: center;
-    }
-    h1 {
-      color: #ffcc00;
-      text-shadow: 2px 2px #ff6600;
-      margin-top: 20px;
-    }
-    .slideshow {
-      position: relative;
-      max-width: 90%;
-      margin: auto;
-    }
-    .fade {
-      display: none;
-      animation: fadeEffect 3s infinite;
-    }
-    @keyframes fadeEffect {
-      0% {opacity: 0;}
-      25% {opacity: 1;}
-      75% {opacity: 1;}
-      100% {opacity: 0;}
-    }
-    img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 0 20px gold;
-    }
-    .mensaje {
-      margin-top: 20px;
-      font-size: 20px;
-      color: #ff6600;
-    }
-    /* Marco corazón */
-    .corazon {
-      width: 200px;
-      height: 200px;
-      background: url("https://i.imgur.com/XxN5wfm.png") no-repeat center/contain;
-      margin: 20px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .corazon img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid gold;
-    }
-    /* Brillitos animados */
-    .sparkle {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: gold;
-      border-radius: 50%;
-      animation: sparkleMove 5s linear infinite;
-    }
-    @keyframes sparkleMove {
-      from { transform: translateY(-10px); opacity: 1;}
-      to { transform: translateY(100vh); opacity: 0;}
-    }
-    /* Audio */
-    audio {
-      margin-top: 25px;
-      width: 300px;
-    }
-  </style>
-</head>
-<body>
-  <h1>🌼 Flores Amarillas para Mi Princesa 🌼</h1>
-
-  <!-- Slideshow -->
-  <div class="slideshow">
-    <div class="fade"><img src="https://i.imgur.com/FqX0QoY.jpg" alt="Flor 1"></div>
-    <div class="fade"><img src="https://i.imgur.com/8rmBY8R.jpg" alt="Flor 2"></div>
-    <div class="fade"><img src="https://i.imgur.com/RcM8oJ5.jpg" alt="Flor 3"></div>
-  </div>
-
-  <!-- Marco de corazón con foto -->
-  <div class="corazon">
-    <img src="https://i.imgur.com/JRrVi0v.jpg" alt="Mi amor">
-  </div>
-
-  <!-- Mensaje -->
-  <div class="mensaje">💛 La mejor novia del universo M.F.T.Z — Mi princesa emosha 😍💛</div>
-
-  <!-- Música -->
-  <audio controls autoplay loop>
-    <source src="Floricienta_Flores_Amarillas.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio 😢
-  </audio>
-
-  <!-- Brillitos -->
-  <script>
-    let body = document.body;
-    setInterval(() => {
-      let sparkle = document.createElement('div');
-      sparkle.className = 'sparkle';
-      sparkle.style.left = Math.random() * window.innerWidth + 'px';
-      sparkle.style.top = '0px';
-      body.appendChild(sparkle);
-      setTimeout(() => sparkle.remove(), 5000);
-    }, 300);
-  </script>
-
-  <!-- Slideshow automático -->
-  <script>
-    let slideIndex = 0;
-    function showSlides() {
-      let slides = document.getElementsByClassName("fade");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
-      slides[slideIndex-1].style.display = "block";
-      setTimeout(showSlides, 3000); // Cambia cada 3 seg
-    }
-    showSlides();
-  </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>🌼 Flores Amarillas para Mi Princesa 🌼</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: #fff8dc;
-      overflow: hidden;
-      text-align: center;
-    }
-    h1 {
-      color: #ffcc00;
-      text-shadow: 2px 2px #ff6600;
-      margin-top: 20px;
-    }
-    .slideshow {
-      position: relative;
-      max-width: 90%;
-      margin: auto;
-    }
-    .fade {
-      display: none;
-      animation: fadeEffect 3s infinite;
-    }
-    @keyframes fadeEffect {
-      0% {opacity: 0;}
-      25% {opacity: 1;}
-      75% {opacity: 1;}
-      100% {opacity: 0;}
-    }
-    img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 0 20px gold;
-    }
-    .mensaje {
-      margin-top: 20px;
-      font-size: 20px;
-      color: #ff6600;
-    }
-    /* Marco corazón */
-    .corazon {
-      width: 200px;
-      height: 200px;
-      background: url("https://i.imgur.com/XxN5wfm.png") no-repeat center/contain;
-      margin: 20px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .corazon img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid gold;
-    }
-    /* Brillitos animados */
-    .sparkle {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: gold;
-      border-radius: 50%;
-      animation: sparkleMove 5s linear infinite;
-    }
-    @keyframes sparkleMove {
-      from { transform: translateY(-10px); opacity: 1;}
-      to { transform: translateY(100vh); opacity: 0;}
-    }
-    /* Audio */
-    audio {
-      margin-top: 25px;
-      width: 300px;
-    }
-  </style>
-</head>
-<body>
-  <h1>🌼 Flores Amarillas para Mi Princesa 🌼</h1>
-
-  <!-- Slideshow -->
-  <div class="slideshow">
-    <div class="fade"><img src="https://i.imgur.com/FqX0QoY.jpg" alt="Flor 1"></div>
-    <div class="fade"><img src="https://i.imgur.com/8rmBY8R.jpg" alt="Flor 2"></div>
-    <div class="fade"><img src="https://i.imgur.com/RcM8oJ5.jpg" alt="Flor 3"></div>
-  </div>
-
-  <!-- Marco de corazón con foto -->
-  <div class="corazon">
-    <img src="https://i.imgur.com/JRrVi0v.jpg" alt="Mi amor">
-  </div>
-
-  <!-- Mensaje -->
-  <div class="mensaje">💛 La mejor novia del universo M.F.T.Z — Mi princesa emosha 😍💛</div>
-
-  <!-- Música -->
-  <audio controls autoplay loop>
-    <source src="Floricienta_Flores_Amarillas.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio 😢
-  </audio>
-
-  <!-- Brillitos -->
-  <script>
-    let body = document.body;
-    setInterval(() => {
-      let sparkle = document.createElement('div');
-      sparkle.className = 'sparkle';
-      sparkle.style.left = Math.random() * window.innerWidth + 'px';
-      sparkle.style.top = '0px';
-      body.appendChild(sparkle);
-      setTimeout(() => sparkle.remove(), 5000);
-    }, 300);
-  </script>
-
-  <!-- Slideshow automático -->
-  <script>
-    let slideIndex = 0;
-    function showSlides() {
-      let slides = document.getElementsByClassName("fade");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
-      slides[slideIndex-1].style.display = "block";
-      setTimeout(showSlides, 3000); // Cambia cada 3 seg
-    }
-    showSlides();
-  </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>🌼 Flores Amarillas para Mi Princesa 🌼</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: #fff8dc;
-      overflow: hidden;
-      text-align: center;
-    }
-    h1 {
-      color: #ffcc00;
-      text-shadow: 2px 2px #ff6600;
-      margin-top: 20px;
-    }
-    .slideshow {
-      position: relative;
-      max-width: 90%;
-      margin: auto;
-    }
-    .fade {
-      display: none;
-      animation: fadeEffect 3s infinite;
-    }
-    @keyframes fadeEffect {
-      0% {opacity: 0;}
-      25% {opacity: 1;}
-      75% {opacity: 1;}
-      100% {opacity: 0;}
-    }
-    img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 0 20px gold;
-    }
-    .mensaje {
-      margin-top: 20px;
-      font-size: 20px;
-      color: #ff6600;
-    }
-    /* Marco corazón */
-    .corazon {
-      width: 200px;
-      height: 200px;
-      background: url("https://i.imgur.com/XxN5wfm.png") no-repeat center/contain;
-      margin: 20px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .corazon img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid gold;
-    }
-    /* Brillitos animados */
-    .sparkle {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: gold;
-      border-radius: 50%;
-      animation: sparkleMove 5s linear infinite;
-    }
-    @keyframes sparkleMove {
-      from { transform: translateY(-10px); opacity: 1;}
-      to { transform: translateY(100vh); opacity: 0;}
-    }
-    /* Audio */
-    audio {
-      margin-top: 25px;
-      width: 300px;
-    }
-  </style>
-</head>
-<body>
-  <h1>🌼 Flores Amarillas para Mi Princesa 🌼</h1>
-
-  <!-- Slideshow -->
-  <div class="slideshow">
-    <div class="fade"><img src="https://i.imgur.com/FqX0QoY.jpg" alt="Flor 1"></div>
-    <div class="fade"><img src="https://i.imgur.com/8rmBY8R.jpg" alt="Flor 2"></div>
-    <div class="fade"><img src="https://i.imgur.com/RcM8oJ5.jpg" alt="Flor 3"></div>
-  </div>
-
-  <!-- Marco de corazón con foto -->
-  <div class="corazon">
-    <img src="https://i.imgur.com/JRrVi0v.jpg" alt="Mi amor">
-  </div>
-
-  <!-- Mensaje -->
-  <div class="mensaje">💛 La mejor novia del universo M.F.T.Z — Mi princesa emosha 😍💛</div>
-
-  <!-- Música -->
-  <audio controls autoplay loop>
-    <source src="Floricienta_Flores_Amarillas.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio 😢
-  </audio>
-
-  <!-- Brillitos -->
-  <script>
-    let body = document.body;
-    setInterval(() => {
-      let sparkle = document.createElement('div');
-      sparkle.className = 'sparkle';
-      sparkle.style.left = Math.random() * window.innerWidth + 'px';
-      sparkle.style.top = '0px';
-      body.appendChild(sparkle);
-      setTimeout(() => sparkle.remove(), 5000);
-    }, 300);
-  </script>
-
-  <!-- Slideshow automático -->
-  <script>
-    let slideIndex = 0;
-    function showSlides() {
-      let slides = document.getElementsByClassName("fade");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
-      slides[slideIndex-1].style.display = "block";
-      setTimeout(showSlides, 3000); // Cambia cada 3 seg
-    }
-    showSlides();
-  </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>🌼 Flores Amarillas para Mi Princesa 🌼</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: #fff8dc;
-      overflow: hidden;
-      text-align: center;
-    }
-    h1 {
-      color: #ffcc00;
-      text-shadow: 2px 2px #ff6600;
-      margin-top: 20px;
-    }
-    .slideshow {
-      position: relative;
-      max-width: 90%;
-      margin: auto;
-    }
-    .fade {
-      display: none;
-      animation: fadeEffect 3s infinite;
-    }
-    @keyframes fadeEffect {
-      0% {opacity: 0;}
-      25% {opacity: 1;}
-      75% {opacity: 1;}
-      100% {opacity: 0;}
-    }
-    img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 0 20px gold;
-    }
-    .mensaje {
-      margin-top: 20px;
-      font-size: 20px;
-      color: #ff6600;
-    }
-    /* Marco corazón */
-    .corazon {
-      width: 200px;
-      height: 200px;
-      background: url("https://i.imgur.com/XxN5wfm.png") no-repeat center/contain;
-      margin: 20px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .corazon img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid gold;
-    }
-    /* Brillitos animados */
-    .sparkle {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: gold;
-      border-radius: 50%;
-      animation: sparkleMove 5s linear infinite;
-    }
-    @keyframes sparkleMove {
-      from { transform: translateY(-10px); opacity: 1;}
-      to { transform: translateY(100vh); opacity: 0;}
-    }
-    /* Audio */
-    audio {
-      margin-top: 25px;
-      width: 300px;
-    }
-  </style>
-</head>
-<body>
-  <h1>🌼 Flores Amarillas para Mi Princesa 🌼</h1>
-
-  <!-- Slideshow -->
-  <div class="slideshow">
-    <div class="fade"><img src="https://i.imgur.com/FqX0QoY.jpg" alt="Flor 1"></div>
-    <div class="fade"><img src="https://i.imgur.com/8rmBY8R.jpg" alt="Flor 2"></div>
-    <div class="fade"><img src="https://i.imgur.com/RcM8oJ5.jpg" alt="Flor 3"></div>
-  </div>
-
-  <!-- Marco de corazón con foto -->
-  <div class="corazon">
-    <img src="https://i.imgur.com/JRrVi0v.jpg" alt="Mi amor">
-  </div>
-
-  <!-- Mensaje -->
-  <div class="mensaje">💛 La mejor novia del universo M.F.T.Z — Mi princesa emosha 😍💛</div>
-
-  <!-- Música -->
-  <audio controls autoplay loop>
-    <source src="Floricienta_Flores_Amarillas.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio 😢
-  </audio>
-
-  <!-- Brillitos -->
-  <script>
-    let body = document.body;
-    setInterval(() => {
-      let sparkle = document.createElement('div');
-      sparkle.className = 'sparkle';
-      sparkle.style.left = Math.random() * window.innerWidth + 'px';
-      sparkle.style.top = '0px';
-      body.appendChild(sparkle);
-      setTimeout(() => sparkle.remove(), 5000);
-    }, 300);
-  </script>
-
-  <!-- Slideshow automático -->
-  <script>
-    let slideIndex = 0;
-    function showSlides() {
-      let slides = document.getElementsByClassName("fade");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
-      slides[slideIndex-1].style.display = "block";
-      setTimeout(showSlides, 3000); // Cambia cada 3 seg
-    }
-    showSlides();
-  </script>
-</body>
-</html>
+    @keyframes sparkle {
+      0% { transform
